@@ -12,10 +12,7 @@ defineProps<{
   <div class="summary-section">
     <div class="summary-section__about">
       <div class="summary-section__image-wrapper">
-        <img
-          :src="isMobile ? 'img/vr-girl-mobile.png' : '/img/vr-girl-desktop.png'"
-          class="summary-section__image"
-        />
+        <img :src="isMobile ? 'img/vr-girl-mobile.png' : '/img/vr-girl-desktop.png'" class="summary-section__image" />
       </div>
       <div class="summary-section__description">
         <h1 class="summary-section__title">{{ data.summaryTitle }}</h1>
@@ -23,13 +20,7 @@ defineProps<{
       </div>
     </div>
     <div class="summary-section__card-wrapper">
-      <IconCard
-        v-for="card in data.iconCards"
-        :key="card.perk"
-        :title="card.perk"
-        :text="card.text"
-        :icon="card.icon"
-      />
+      <IconCard v-for="card in data.iconCards" :key="card.perk" :title="card.perk" :text="card.text" :icon="card.icon" />
     </div>
   </div>
 </template>
@@ -74,8 +65,8 @@ defineProps<{
   &__card-wrapper {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 30px;
-    gap: 30px;
+    padding: 0 15px;
+    gap: 15px;
   }
 
   @media (min-width: 768px) {

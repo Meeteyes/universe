@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import arrowImage from '/img/icons/arrow.svg';
+import arrowImage from '/img/icons/arrow.svg'
 
 defineProps<{
   title?: string
@@ -23,12 +23,18 @@ defineProps<{
         <slot></slot>
       </div>
       <div v-if="!hideNav" class="content-slider__carousel-nav">
-        <div role="button" class="content-slider__carousel-button content-slider__carousel-button--left"
-          @click="$emit('changeSlide', -1)">
+        <div
+          role="button"
+          class="content-slider__carousel-button content-slider__carousel-button--left"
+          @click="$emit('changeSlide', -1)"
+        >
           <img :src="arrowImage" />
         </div>
-        <div role="button" class="content-slider__carousel-button content-slider__carousel-button--right"
-          @click="$emit('changeSlide', 1)">
+        <div
+          role="button"
+          class="content-slider__carousel-button content-slider__carousel-button--right"
+          @click="$emit('changeSlide', 1)"
+        >
           <img class="content-slider__right-arrow" :src="arrowImage" />
         </div>
       </div>

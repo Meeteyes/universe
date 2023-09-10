@@ -95,21 +95,41 @@ console.log()
   <div class="landing-page" :id="displayData.menu[0]">
     <div class="landing-page__wrapper">
       <NavBar :menu="displayData.menu" :action-text="displayData.actionButtonOrder" />
-      <HeroBanner :title="displayData.title" :action-call="displayData.actionButton" :is-mobile="isMobileView"
-        :menu="displayData.menu" />
+      <HeroBanner
+        :title="displayData.title"
+        :action-call="displayData.actionButton"
+        :is-mobile="isMobileView"
+        :menu="displayData.menu"
+      />
       <SummarySection :id="displayData.menu[1]" :data="displayData" :isMobile="isMobileView" />
-      <ContentBanner :title="displayData.contentBannerOne.title" :text="displayData.contentBannerOne.text"
-        :action-call="displayData.contentBannerOne.actionCall" :isDesktop="!isMobileView" :link="displayData.menu[4]" />
+      <ContentBanner
+        :title="displayData.contentBannerOne.title"
+        :text="displayData.contentBannerOne.text"
+        :action-call="displayData.contentBannerOne.actionCall"
+        :isDesktop="!isMobileView"
+        :link="displayData.menu[4]"
+      />
 
       <div :id="displayData.menu[2]" class="landing-page__episode-section">
         <h1 class="landing-page__episode-heading">{{ displayData.episodes.title }}</h1>
-        <ContentSliderMobile v-if="isMobileView" :title="displayEpisode.title" :subheading="displayEpisode.subheading"
-          :description="displayEpisode.description" :image="displayEpisode.image"
-          @change-slide="(value) => changeSlide(value, 'episodes')">
+        <ContentSliderMobile
+          v-if="isMobileView"
+          :title="displayEpisode.title"
+          :subheading="displayEpisode.subheading"
+          :description="displayEpisode.description"
+          :image="displayEpisode.image"
+          @change-slide="(value) => changeSlide(value, 'episodes')"
+        >
         </ContentSliderMobile>
-        <ContentSlider v-else :title="displayEpisode.title" :subheading="displayEpisode.subheading"
-          :description="displayEpisode.description" :image="displayEpisode.image" :hide-nav="false"
-          @change-slide="(value) => changeSlide(value, 'episodes')">
+        <ContentSlider
+          v-else
+          :title="displayEpisode.title"
+          :subheading="displayEpisode.subheading"
+          :description="displayEpisode.description"
+          :image="displayEpisode.image"
+          :hide-nav="false"
+          @change-slide="(value) => changeSlide(value, 'episodes')"
+        >
         </ContentSlider>
       </div>
     </div>
@@ -118,27 +138,53 @@ console.log()
       <h1 class="landing-page__how-it-works-title">{{ displayData.howItWorks.title }}</h1>
       <p class="landing-page__how-it-works-description">{{ displayData.howItWorks.description }}</p>
       <div class="landing-page__how-it-works-card-wrapper">
-        <IconCard v-for="(card, index) in displayData.howItWorks.iconCards" :key="card.title"
-          :title="`${index + 1}. ${card.title}`" :text="card.description" :icon="card.icon" />
+        <IconCard
+          v-for="(card, index) in displayData.howItWorks.iconCards"
+          :key="card.title"
+          :title="`${index + 1}. ${card.title}`"
+          :text="card.description"
+          :icon="card.icon"
+        />
       </div>
     </div>
     <div class="landing-page__wrapper">
-      <ContentBanner ref="bannerElement" class="landing-page__second-banner" :title="displayData.contentBannerTwo.title"
-        :text="displayData.contentBannerTwo.text" :action-call="displayData.contentBannerTwo.actionCall" without-image
-        :link="displayData.menu[4]" />
-      <div class="landing-page__testimonial-section">
+      <ContentBanner
+        ref="bannerElement"
+        class="landing-page__second-banner"
+        :title="displayData.contentBannerTwo.title"
+        :text="displayData.contentBannerTwo.text"
+        :action-call="displayData.contentBannerTwo.actionCall"
+        without-image
+        :link="displayData.menu[4]"
+      />
+      <div v-if="false" class="landing-page__testimonial-section">
         <h1 class="landing-page__testimonial-heading">{{ displayData.testimonials.title }}</h1>
-        <ContentSliderMobile v-if="isMobileView" :subheading="displayTestimonial.person"
-          :description="displayTestimonial.feedback" :image="displayTestimonial.avatar" no-background
-          @change-slide="(value) => changeSlide(value, 'testimonials')"><img
-            class="landing-page__testimonial-avatar content-slider__carousel-image" :src="avatarImage" />
+        <ContentSliderMobile
+          v-if="isMobileView"
+          :subheading="displayTestimonial.person"
+          :description="displayTestimonial.feedback"
+          :image="displayTestimonial.avatar"
+          no-background
+          @change-slide="(value) => changeSlide(value, 'testimonials')"
+          ><img
+            class="landing-page__testimonial-avatar content-slider__carousel-image"
+            :src="avatarImage"
+          />
         </ContentSliderMobile>
-        <ContentSlider v-else :subheading="displayTestimonial.person" :description="displayTestimonial.feedback"
-          :hide-nav="displayData.testimonials.testimonialList.length <= 3" no-background
-          @change-slide="(value) => changeSlide(value, 'testimonials')">
+        <ContentSlider
+          v-else
+          :subheading="displayTestimonial.person"
+          :description="displayTestimonial.feedback"
+          :hide-nav="displayData.testimonials.testimonialList.length <= 3"
+          no-background
+          @change-slide="(value) => changeSlide(value, 'testimonials')"
+        >
           <div class="landing-page__testimonial-card-wrapper">
-            <div v-for="item in displayData.testimonials.testimonialList" :key="item.person"
-              class="landing-page__testimonial-card">
+            <div
+              v-for="item in displayData.testimonials.testimonialList"
+              :key="item.person"
+              class="landing-page__testimonial-card"
+            >
               <img class="landing-page__testimonial-avatar" :src="avatarImage" />
               <h3 class="landing-page__testimonial-author">{{ item.person }}</h3>
               <p>{{ item.feedback }}</p>
@@ -149,11 +195,16 @@ console.log()
       <div class="landing-page__video">
         <h1 class="landing-page__video-title">{{ displayData.video.title }}</h1>
         <div class="landing-page__video-wrapper">
-          <iframe class="landing-page__video-frame" width="560" height="315"
-            src="https://www.youtube.com/embed/c6Gbqd9Ekrc?si=G8FnNZxhzKT21Uyd?vq=hd720" title="Binoklis video"
+          <iframe
+            class="landing-page__video-frame"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/c6Gbqd9Ekrc?si=G8FnNZxhzKT21Uyd?vq=hd720"
+            title="Binoklis video"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </div>
@@ -168,23 +219,62 @@ console.log()
       </p>
     </div>
     <div class="landing-page__wrapper landing-page__wrapper--margin">
-      <ContentBanner :id="displayData.menu[4]" :title="displayData.form.title" :text="displayData.form.description"
-        :action-call="displayData.form.actionCall" is-orange without-button>
-        <form action="https://binoklis.us20.list-manage.com/subscribe/post" method="post" class="landing-page__form">
+      <ContentBanner
+        :id="displayData.menu[4]"
+        :title="displayData.form.title"
+        :text="displayData.form.description"
+        :action-call="displayData.form.actionCall"
+        is-orange
+        without-button
+      >
+        <form
+          action="https://binoklis.us20.list-manage.com/subscribe/post"
+          method="post"
+          class="landing-page__form"
+        >
           <input type="hidden" name="u" value="441949f044e9ca56f5c666d2b" />
           <input type="hidden" name="id" value="d468e1bb57" />
-          <input type="text" :placeholder="formPlaceholders[0].text" class="landing-page__form-input"
-            :name="formPlaceholders[0].id" :id="formPlaceholders[0].id" v-model="formData.name" @input="v$.name.$touch" />
-          <input type="text" :placeholder="formPlaceholders[1].text" class="landing-page__form-input"
-            :name="formPlaceholders[1].id" :id="formPlaceholders[1].id" v-model="formData.organisation"
-            @input="v$.organisation.$touch" />
-          <input type="text" :placeholder="formPlaceholders[2].text" class="landing-page__form-input"
-            :name="formPlaceholders[2].id" :id="formPlaceholders[2].id" v-model="formData.phone"
-            @input="v$.phone.$touch" />
-          <input type="text" :placeholder="formPlaceholders[3].text" class="landing-page__form-input"
-            :name="formPlaceholders[3].id" :id="formPlaceholders[3].id" v-model="formData.email"
-            @input="v$.email.$touch" />
-          <ActionButton :text="displayData.form.actionCall" is-submit :is-disabled="isSubmitDisabled" />
+          <input
+            type="text"
+            :placeholder="formPlaceholders[0].text"
+            class="landing-page__form-input"
+            :name="formPlaceholders[0].id"
+            :id="formPlaceholders[0].id"
+            v-model="formData.name"
+            @input="v$.name.$touch"
+          />
+          <input
+            type="text"
+            :placeholder="formPlaceholders[1].text"
+            class="landing-page__form-input"
+            :name="formPlaceholders[1].id"
+            :id="formPlaceholders[1].id"
+            v-model="formData.organisation"
+            @input="v$.organisation.$touch"
+          />
+          <input
+            type="text"
+            :placeholder="formPlaceholders[2].text"
+            class="landing-page__form-input"
+            :name="formPlaceholders[2].id"
+            :id="formPlaceholders[2].id"
+            v-model="formData.phone"
+            @input="v$.phone.$touch"
+          />
+          <input
+            type="text"
+            :placeholder="formPlaceholders[3].text"
+            class="landing-page__form-input"
+            :name="formPlaceholders[3].id"
+            :id="formPlaceholders[3].id"
+            v-model="formData.email"
+            @input="v$.email.$touch"
+          />
+          <ActionButton
+            :text="displayData.form.actionCall"
+            is-submit
+            :is-disabled="isSubmitDisabled"
+          />
         </form>
       </ContentBanner>
     </div>

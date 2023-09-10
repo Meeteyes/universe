@@ -21,7 +21,7 @@ defineProps({
     <img :src="cornerImage" class="content-banner__corner content-banner__corner--bottomright" />
     <img :src="cornerImage" class="content-banner__corner content-banner__corner--bottomleft" />
     <h1 class="content-banner__title">{{ title }}</h1>
-    <p v-if="text" class="content-banner__text">{{ text }}</p>
+    <p v-if="text" class="content-banner__text" v-html="text"></p>
     <img v-if="!$slots.default && !withoutImage" :src="kidImage" class="content-banner__image"
       :class="{ 'content-banner__image--desktop': isDesktop }" />
     <slot></slot>
@@ -42,7 +42,6 @@ defineProps({
   display: flex;
   flex-direction: column;
   align-items: center;
-  // flex-grow: 2;
   gap: 15px;
   color: white;
 
@@ -85,7 +84,6 @@ defineProps({
   }
 
   &__title {
-    // flex-grow: 2;
     max-width: 80%;
     padding: 20px 0;
     text-align: center;
@@ -124,7 +122,7 @@ defineProps({
     padding: 0 0;
 
     &__text {
-      max-width: 40%;
+      max-width: 50%;
     }
   }
 }

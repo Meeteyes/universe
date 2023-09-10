@@ -8,11 +8,8 @@ defineProps<{
 
 <template>
   <div class="icon-card">
-    <img
-      :src="`/img/icons/${icon}`"
-      class="icon-card__icon"
-      :class="{ 'icon-card__icon--goggles': icon === 'icon-goggles.svg' }"
-    />
+    <img :src="`/img/icons/${icon}`" class="icon-card__icon"
+      :class="{ 'icon-card__icon--goggles': icon === 'icon-goggles.svg' }" />
     <h4 class="icon-card__title">{{ title }}</h4>
     <p class="icon-card__text">{{ text }}</p>
   </div>
@@ -39,6 +36,16 @@ defineProps<{
   &__text,
   &__title {
     text-align: center;
+  }
+
+  &__text {
+    font-size: 0.8rem;
+  }
+
+  @media(min-width: 769px) {
+    &__text {
+      font-size: 1rem;
+    }
   }
 }
 </style>

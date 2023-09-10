@@ -154,8 +154,8 @@ export const LANG_VAR_ENG = {
 
 export const LANG_VAR_LAT = {
   menu: ['Sākums', 'Par mums', 'Epizodes', 'BUJ', 'Saziņa'],
-  title: 'VR ceļojums grupai',
-  actionButton: 'PASŪTĪT',
+  title: "Virtuālās realitātes izrāde skolēniem",
+  actionButton: 'UZZINĀT VAIRĀK',
   actionButtonOrder: 'SAŅEM PIEDĀVĀJUMU',
   summaryTitle: 'Vai esi gatavs izbaudīt nākotnes izglītību? Piedzīvo to savā klasē!',
   summaryText:
@@ -172,19 +172,19 @@ export const LANG_VAR_LAT = {
       icon: 'icon-calander.svg'
     },
     {
-      perk: 'Iedvesma',
+      perk: 'Iedvesmo izzināt',
       text: 'Iedvesmo skolēnus atklājumiem. Unikāls šovs Latvijā',
       icon: 'icon-inspiration.svg'
     },
     {
       perk: 'Visu iesaiste',
-      text: 'Nojauc šķēršļus starp tehnoloģijām un bērniem. Tehnoloģiskais nodrošinājums no vadošā VR uzņēmuma PICO',
+      text: 'Dod iespēju spert pirmos soļus VR pasaulē. Tehnoloģiskais nodrošinājums no PICO',
       icon: 'icon-goggles.svg'
     }
   ],
   contentBannerOne: {
     title: 'Zinātne ir skaista!',
-    text: 'Piesaki VR izrādes “Īsumā par Visumu” apmeklējumu un radi atmiņā paliekošu pieredzi saviem skolēniem.',
+    text: 'Piesaki VR izrādes “Īsumā par Visumu” apmeklējumu un radi atmiņā paliekošu pieredzi saviem skolēniem. <br/>Izrādi var pasūtīt arī  "Latvijas skolas soma" programmas ietvaros!',
     actionCall: 'SAZINĀTIES'
   },
   episodes: {
@@ -233,13 +233,13 @@ export const LANG_VAR_LAT = {
         icon: 'icon-message.svg'
       },
       {
-        title: 'Izvēlies datumu un atrašanās vietu',
+        title: 'Izvēlies datumu un vietu',
         description: 'Norādi sev piemērotu datumu un atrašanās vietu',
         icon: 'icon-calander.svg'
       },
       {
         title: 'Izrādes nodrošinājums',
-        description: 'VR izrādes aprīkojumu nogādāsim norādītajā vietā.',
+        description: 'VR izrādes vadītājs ar aprīkojumu ieradīsies norādītajā vietā.',
         icon: 'icon-pin.svg'
       },
       {

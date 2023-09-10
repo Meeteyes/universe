@@ -17,7 +17,7 @@ defineProps<{
     />
     <div class="hero-banner__content">
       <h1 class="hero-banner__title">{{ title }}</h1>
-      <a :href="`#${menu[4]}`">
+      <a :href="`#${menu[1]}`">
         <ActioButton class="hero-banner__button" :text="actionCall" size="large" />
       </a>
     </div>

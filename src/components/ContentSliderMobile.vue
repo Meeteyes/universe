@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import arrowImage from '/img/icons/arrow.svg';
+import arrowImage from '/img/icons/arrow.svg'
 
 defineProps<{
   title?: string
