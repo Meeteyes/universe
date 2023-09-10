@@ -154,7 +154,7 @@ export const LANG_VAR_ENG = {
 
 export const LANG_VAR_LAT = {
   menu: ['Sākums', 'Par mums', 'Epizodes', 'BUJ', 'Saziņa'],
-  title: 'VR ceļojums grupai. No jebkuras vietas pasaulē.',
+  title: 'VR ceļojums grupai',
   actionButton: 'PASŪTĪT',
   actionButtonOrder: 'SAŅEM PIEDĀVĀJUMU',
   summaryTitle: 'Vai esi gatavs izbaudīt nākotnes izglītību? Piedzīvo to savā klasē!',
