@@ -2,13 +2,18 @@
 defineProps<{
   title: string
   text: string
+  icon: string
 }>()
 </script>
 
 <template>
   <div class="icon-card">
-    <div class="icon-card__icon"></div>
-    <h3 class="icon-card__title">{{ title }}</h3>
+    <img
+      :src="`/img/icons/${icon}`"
+      class="icon-card__icon"
+      :class="{ 'icon-card__icon--goggles': icon === 'icon-goggles.svg' }"
+    />
+    <h4 class="icon-card__title">{{ title }}</h4>
     <p class="icon-card__text">{{ text }}</p>
   </div>
 </template>
@@ -22,9 +27,13 @@ defineProps<{
   gap: 10px;
 
   &__icon {
-    width: 70px;
-    height: 70px;
-    background-color: yellow;
+    width: 80px;
+    height: 80px;
+
+    &--goggles {
+      width: 120px;
+      height: 80px;
+    }
   }
 
   &__text,

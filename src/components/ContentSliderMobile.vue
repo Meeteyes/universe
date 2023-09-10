@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import arrowImage from '/img/icons/arrow.svg';
+
 defineProps<{
   title?: string
   subheading: string
   description: string
   noBackground?: boolean
-  avatar?: string
+  image?: string
 }>()
 </script>
 <template>
@@ -12,24 +14,36 @@ defineProps<{
     <h2 v-if="title" class="content-slider__episode-title">{{ title }}</h2>
     <div class="content-slider__carousel">
       <div class="content-slider__carousel-wrapper">
-        <img :src="avatar
-          ? avatar
-          : 'img/png-transparent-monkey-face-monkey-face-animals-head-thumbnail.png'
-          " class="content-slider__carousel-image" />
+        <img v-if="!$slots.default" :src="`/img/${image}`" class="content-slider__carousel-image" />
+        <slot class="content-slider__carousel-image"></slot>
         <div class="content-slider__carousel-nav">
-          <div role="button" class="content-slider__carousel-button content-slider__carousel-button--left"
-            @click="$emit('changeSlide', -1)">
-            &#10216;
+          <div
+            role="button"
+            class="content-slider__carousel-button content-slider__carousel-button--left"
+            @click="$emit('changeSlide', -1)"
+          >
+            <img class="content-slider__carousel-button-icon" :src="arrowImage" />
           </div>
-          <div role="button" class="content-slider__carousel-button content-slider__carousel-button--right"
-            @click="$emit('changeSlide', 1)">
-            &#10217;
+          <div
+            role="button"
+            class="content-slider__carousel-button content-slider__carousel-button--right"
+            @click="$emit('changeSlide', 1)"
+          >
+            <img
+              class="content-slider__carousel-button-icon content-slider__right-arrow"
+              :src="arrowImage"
+            />
           </div>
         </div>
       </div>
       <div></div>
-      <h3 class="content-slider__subheading">{{ subheading }}</h3>
-      <p class="content-slider__description">{{ description }}</p>
+      <h3 :class="`content-slider__subheading${noBackground ? '--no-background' : ''}`">
+        {{ subheading }}
+      </h3>
+      <p
+        :class="`content-slider__description${noBackground ? '--no-background' : ''}`"
+        v-html="description"
+      />
     </div>
   </div>
 </template>
@@ -49,6 +63,10 @@ defineProps<{
     color: black;
   }
 
+  &__episode-title {
+    color: white;
+  }
+
   &__carousel {
     width: 100%;
     display: flex;
@@ -56,6 +74,7 @@ defineProps<{
     gap: 20px;
 
     &-wrapper {
+      width: 100%;
       display: grid;
       grid-template-columns: 1;
       grid-template-rows: 1;
@@ -63,8 +82,7 @@ defineProps<{
     }
 
     &-image {
-      // width: 100%;
-      max-width: 200px;
+      max-width: 110%;
       grid-area: 1/1;
     }
 
@@ -86,6 +104,13 @@ defineProps<{
       align-items: center;
       font-size: 30px;
       font-weight: 900;
+      position: relative;
+
+      &-icon {
+        width: 1rem;
+        position: relative;
+        right: 5px;
+      }
 
       &--right {
         position: relative;
@@ -99,9 +124,22 @@ defineProps<{
     }
   }
 
+  &__right-arrow {
+    transform: scaleX(-1);
+    right: 0;
+    left: 5px;
+  }
+
   &__subheading {
     width: 75%;
     text-align: center;
+    color: white;
+
+    &--no-background {
+      width: 75%;
+      color: var(--gray-text);
+      text-align: center;
+    }
   }
 
   &__description {
@@ -109,6 +147,13 @@ defineProps<{
     font-size: 1.3rem;
     line-height: 1.8rem;
     text-align: center;
+    color: white;
+
+    &--no-background {
+      width: 90%;
+      color: var(--gray-text);
+      text-align: center;
+    }
   }
 }
 </style>

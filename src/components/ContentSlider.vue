@@ -1,41 +1,35 @@
 <script setup lang="ts">
+import arrowImage from '/img/icons/arrow.svg';
+
 defineProps<{
   title?: string
   subheading?: string
   description?: string
   noBackground?: boolean
+  image?: string
+  hideNav: boolean
 }>()
 </script>
 <template>
   <div class="content-slider" :class="`content-slider${noBackground ? '--no-background' : ''}`">
     <div class="content-slider__carousel">
       <div class="content-slider__carousel-content">
-        <img
-          v-if="!$slots.default"
-          src="../../public/img/png-transparent-monkey-face-monkey-face-animals-head-thumbnail.png"
-          class="content-slider__carousel-slot"
-        />
+        <img v-if="!$slots.default" :src="`/img/${image}`" class="content-slider__carousel-slot" />
         <div v-if="!$slots.default" class="content-slider__text">
           <h2 v-if="title" class="content-slider__episode-title">{{ title }}</h2>
           <h3 class="content-slider__subheading">{{ subheading }}</h3>
-          <p class="content-slider__description">{{ description }}</p>
+          <p class="content-slider__description" v-html="description"></p>
         </div>
         <slot></slot>
       </div>
-      <div class="content-slider__carousel-nav">
-        <div
-          role="button"
-          class="content-slider__carousel-button content-slider__carousel-button--left"
-          @click="$emit('changeSlide', -1)"
-        >
-          &#10216;
+      <div v-if="!hideNav" class="content-slider__carousel-nav">
+        <div role="button" class="content-slider__carousel-button content-slider__carousel-button--left"
+          @click="$emit('changeSlide', -1)">
+          <img :src="arrowImage" />
         </div>
-        <div
-          role="button"
-          class="content-slider__carousel-button content-slider__carousel-button--right"
-          @click="$emit('changeSlide', 1)"
-        >
-          &#10217;
+        <div role="button" class="content-slider__carousel-button content-slider__carousel-button--right"
+          @click="$emit('changeSlide', 1)">
+          <img class="content-slider__right-arrow" :src="arrowImage" />
         </div>
       </div>
     </div>
@@ -46,6 +40,7 @@ defineProps<{
 .content-slider {
   padding: 20px 0;
   background-color: var(--orange);
+
   &--no-background {
     background-color: white;
     color: black;
@@ -93,6 +88,10 @@ defineProps<{
         right: 25px;
       }
     }
+  }
+
+  &__right-arrow {
+    transform: scaleX(-1);
   }
 
   &__text {

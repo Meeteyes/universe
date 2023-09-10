@@ -23,7 +23,9 @@ const toggleMenu = () => {
     </div>
   </div>
   <div v-if="isOpen" class="mobile-menu__menu-wrapper">
-    <h2 v-for="item in menu" :key="item">{{ item }}</h2>
+    <a v-for="item in menu" :key="item" :href="`#${item}`" @click="toggleMenu">
+      <h2>{{ item }}</h2>
+    </a>
   </div>
 </template>
 

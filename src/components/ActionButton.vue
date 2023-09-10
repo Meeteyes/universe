@@ -1,18 +1,26 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from 'vue'
 const props = defineProps<{
   text: String
   outlined?: boolean
   size?: string
+  isSubmit?: boolean
+  isDisabled?: boolean
 }>()
 
-const textSize = computed(() => props.size === "large" ? 'var(--font-size-action--large)' : '1rem');
-console.log("Text", textSize.value)
+const textSize = computed(() =>
+  props.size === 'large' ? 'var(--font-size-action--large)' : '1rem'
+)
 </script>
 <template>
-  <div role="button" class="action-button" :class="{ 'action-button--outlined': outlined }">
+  <button
+    :type="isSubmit ? 'submit' : 'button'"
+    class="action-button"
+    :class="{ 'action-button--outlined': outlined, 'action-button--disabled': isDisabled }"
+    :disabled="isDisabled"
+  >
     {{ text.toUpperCase() }}
-  </div>
+  </button>
 </template>
 <style>
 .action-button {
@@ -22,16 +30,19 @@ console.log("Text", textSize.value)
   border-radius: 30px;
   background-color: #000;
   color: white;
-  /* max-width: 160px; */
   height: 2.7rem;
   font-size: v-bind(textSize);
-  padding: 1.7rem 4.2rem;
+  padding: 2rem 3.5rem;
 }
 
 .action-button--outlined {
   background-color: white;
-  color: #000;
+  color: var(--gray-text);
   border: 1px solid #000;
+  padding: 1.5rem 3.5rem;
+}
 
+.action-button--disabled {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 </style>
