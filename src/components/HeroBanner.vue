@@ -11,10 +11,7 @@ defineProps<{
 
 <template>
   <div class="hero-banner">
-    <img
-      class="hero-banner__image"
-      :src="isMobile ? '/img/hero-mobile.png' : '/img/hero-desktop.png'"
-    />
+    <img class="hero-banner__image" :src="isMobile ? '/img/hero-mobile.png' : '/img/hero-desktop.png'" />
     <div class="hero-banner__content">
       <h1 class="hero-banner__title">{{ title }}</h1>
       <a :href="`#${menu[1]}`">
@@ -26,7 +23,7 @@ defineProps<{
 <style lang="scss">
 .hero-banner {
   padding: 20px 0 50px 0;
-  height: 70vh;
+  height: 75vh;
   margin-bottom: 15vh;
 
   display: grid;

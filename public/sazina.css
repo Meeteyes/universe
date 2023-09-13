@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.sazina-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.sazina-card {
+    width: 70%;
+    max-width: 800px;
+    height: 50%;
+    max-height: 600px;
+    background-color: #9564d6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 50px;
+}
+
+.sazina-button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    background-color: #000;
+    color: white;
+    border-radius: 30px;;
+}
