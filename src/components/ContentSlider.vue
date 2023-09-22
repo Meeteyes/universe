@@ -8,19 +8,21 @@ defineProps<{
   noBackground?: boolean
   image?: string
   hideNav: boolean
-  imageName: string
+  imageName?: string
 }>()
 </script>
 <template>
   <div class="content-slider" :class="`content-slider${noBackground ? '--no-background' : ''}`">
     <div class="content-slider__carousel">
       <div class="content-slider__carousel-content">
-        <img v-if="!$slots.default" :src="image" class="content-slider__carousel-slot" :class="{
-          energy: imageName === 'energy.png',
-          life: imageName === 'life.png',
-          earth: imageName === 'earth.png',
-          humans: imageName === 'ancestor.png'
-        }" />
+        <div class="content-slider__image-wrapper">
+          <img v-if="!$slots.default" :src="image" class="content-slider__carousel-slot" :class="{
+            energy: imageName === 'energy.png',
+            life: imageName === 'life.png',
+            earth: imageName === 'earth.png',
+            humans: imageName === 'ancestor.png'
+          }" />
+        </div>
         <div v-if="!$slots.default" class="content-slider__text">
           <h2 v-if="title" class="content-slider__episode-title">{{ title }}</h2>
           <h3 class="content-slider__subheading">{{ subheading }}</h3>
@@ -63,6 +65,7 @@ defineProps<{
       display: flex;
       grid-area: 1 / 1;
       height: 400px;
+      max-height: 400px;
     }
 
     &-nav {
@@ -100,35 +103,55 @@ defineProps<{
     transform: scaleX(-1);
   }
 
+  &__image-wrapper {
+    width: 40%;
+  }
+
   &__text {
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
 
+  &__subheading {
+    width: 100%;
+  }
+
   &__description {
     font-size: 0.8rem;
+    line-height: 1.1rem;
+    text-align: left;
+    margin-top: 2rem;
+  }
+
+  &__description b {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
   }
 }
 
 .life,
 .earth {
-  height: 140%;
+  height: 130%;
   position: relative;
-  top: -75px;
+  top: -70px;
 }
 
 .energy {
-  height: 160%;
+  height: 140%;
   position: relative;
-  top: -130px;
+  top: -110px;
+  right: -70px;
   transform: rotate(10deg);
 }
 
 .humans {
-  height: 130%;
+  height: 120%;
   position: relative;
-  top: -75px;
+  top: -55px;
+  right: -50px;
 }
 </style>

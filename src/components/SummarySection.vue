@@ -12,24 +12,15 @@ defineProps<{
   <div class="summary-section">
     <div class="summary-section__about">
       <div class="summary-section__image-wrapper">
-        <img
-          :src="isMobile ? 'img/vr-girl-mobile.png' : '/img/vr-girl-desktop.png'"
-          class="summary-section__image"
-        />
+        <img :src="isMobile ? 'img/vr-girl-mobile.png' : '/img/vr-girl-desktop.png'" class="summary-section__image" />
       </div>
       <div class="summary-section__description">
-        <h1 class="summary-section__title">{{ data.summaryTitle }}</h1>
+        <h1 class="summary-section__title" v-html="data.summaryTitle" />
         <p class="summary-section__text">{{ data.summaryText }}</p>
       </div>
     </div>
     <div class="summary-section__card-wrapper">
-      <IconCard
-        v-for="card in data.iconCards"
-        :key="card.perk"
-        :title="card.perk"
-        :text="card.text"
-        :icon="card.icon"
-      />
+      <IconCard v-for="card in data.iconCards" :key="card.perk" :title="card.perk" :text="card.text" :icon="card.icon" />
     </div>
   </div>
 </template>
@@ -95,6 +86,7 @@ defineProps<{
     &__image {
       width: 450px;
     }
+
 
     &__description {
       flex-basis: 0;

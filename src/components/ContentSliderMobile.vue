@@ -7,6 +7,7 @@ defineProps<{
   description: string
   noBackground?: boolean
   image?: string
+  imageName?: string
 }>()
 </script>
 <template>
@@ -14,25 +15,17 @@ defineProps<{
     <h2 v-if="title" class="content-slider__episode-title">{{ title }}</h2>
     <div class="content-slider__carousel">
       <div class="content-slider__carousel-wrapper">
-        <img v-if="!$slots.default" :src="`/img/${image}`" class="content-slider__carousel-image" />
+        <img v-if="!$slots.default" :src="image" class="content-slider__carousel-image"
+          :class="{ 'energy-mobile': imageName === 'energy.png' }" />
         <slot class="content-slider__carousel-image"></slot>
         <div class="content-slider__carousel-nav">
-          <div
-            role="button"
-            class="content-slider__carousel-button content-slider__carousel-button--left"
-            @click="$emit('changeSlide', -1)"
-          >
+          <div role="button" class="content-slider__carousel-button content-slider__carousel-button--left"
+            @click="$emit('changeSlide', -1)">
             <img class="content-slider__carousel-button-icon" :src="arrowImage" />
           </div>
-          <div
-            role="button"
-            class="content-slider__carousel-button content-slider__carousel-button--right"
-            @click="$emit('changeSlide', 1)"
-          >
-            <img
-              class="content-slider__carousel-button-icon content-slider__right-arrow"
-              :src="arrowImage"
-            />
+          <div role="button" class="content-slider__carousel-button content-slider__carousel-button--right"
+            @click="$emit('changeSlide', 1)">
+            <img class="content-slider__carousel-button-icon content-slider__right-arrow" :src="arrowImage" />
           </div>
         </div>
       </div>
@@ -40,10 +33,7 @@ defineProps<{
       <h3 :class="`content-slider__subheading${noBackground ? '--no-background' : ''}`">
         {{ subheading }}
       </h3>
-      <p
-        :class="`content-slider__description${noBackground ? '--no-background' : ''}`"
-        v-html="description"
-      />
+      <p :class="`content-slider__description${noBackground ? '--no-background' : ''}`" v-html="description" />
     </div>
   </div>
 </template>
@@ -155,5 +145,9 @@ defineProps<{
       text-align: center;
     }
   }
+}
+
+.energy-mobile {
+  transform: rotate(10deg);
 }
 </style>

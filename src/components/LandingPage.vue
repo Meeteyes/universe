@@ -123,7 +123,7 @@ const carrouselImage = computed(() => {
       <div :id="displayData.menu[2]" class="landing-page__episode-section">
         <h1 class="landing-page__episode-heading">{{ displayData.episodes.title }}</h1>
         <ContentSliderMobile v-if="isMobileView" :title="displayEpisode.title" :subheading="displayEpisode.subheading"
-          :description="displayEpisode.description" :image="displayEpisode.image"
+          :description="displayEpisode.description" :image="carrouselImage" :image-name="displayEpisode.image"
           @change-slide="(value) => changeSlide(value, 'episodes')">
         </ContentSliderMobile>
         <ContentSlider v-else :title="displayEpisode.title" :subheading="displayEpisode.subheading"
@@ -217,6 +217,13 @@ const carrouselImage = computed(() => {
   display: flex;
   flex-direction: column;
   padding-top: 40px;
+  gap: 30px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
 
   &__banner-wrapper {
     display: flex;
@@ -227,7 +234,6 @@ const carrouselImage = computed(() => {
     width: 180px;
     position: relative;
     top: 40px;
-    // right: 30px;
 
     &--desktop {
       position: absolute;
@@ -373,10 +379,11 @@ const carrouselImage = computed(() => {
 
     &__how-it-works-section {
       padding: 20px 5vw v-bind(howItWorksPadding) 5vw;
-      gap: 50px;
+      gap: 15px;
     }
 
     &__how-it-works-card-wrapper {
+      margin-top: 30px;
       flex-direction: row;
     }
 

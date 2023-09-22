@@ -88,6 +88,7 @@ defineProps({
     padding: 20px 0;
     text-align: center;
     color: white;
+    margin-top: 30px;
   }
 
   &__text {

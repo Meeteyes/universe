@@ -157,7 +157,7 @@ export const LANG_VAR_LAT = {
   title: 'Virtuālās realitātes izrāde skolēniem',
   actionButton: 'UZZINĀT VAIRĀK',
   actionButtonOrder: 'SAŅEM PIEDĀVĀJUMU',
-  summaryTitle: 'Vai esi gatavs izbaudīt nākotnes izglītību? Piedzīvo to savā klasē!',
+  summaryTitle: 'Vai esi gatavs izbaudīt nākotnes izglītību? <br/> Piedzīvo to savā klasē!',
   summaryText:
     '“Īsumā par Visumu” piedāvā četras virtuālās realitātes (VR) izrādes par populārzinātniskām tēmām. Elpu aizraujošajā teātra un zinātnes apvienojumā iemīļotas Latvijas teātra personības pavada skatītājus neparastā ceļojumā no molekulām līdz pat zvaigznēm. Izbaudi unikālu VR pieredzi sev ērtā vietā, jo visu izrādei nepieciešamo mēs nogādāsim pie jums!',
   iconCards: [
@@ -196,7 +196,7 @@ export const LANG_VAR_LAT = {
           'Ceļojoša ielu mākslinieka stāsts par neiedomājamiem skaitļiem un attālumiem kosmosā.',
         image: 'earth.png',
         description:
-          'Apkārtējā pasaule ir neticami plaša neatkarīgi no tā, vai to skatās caur mikroskopu vai teleskopu. Skaitīsim smilšugraudus, lai iztēlotos neticamus skaitļus, kas palīdzēs labāk izprast kosmosu un tā attālumus, zvaigznes un galaktikas, ko nosaka gravitācijas un rotācijas spēki. Sērija “Zeme” palīdz veidot skolēnu izpratni par to, kā mūsu eksistence uz Zemes, lai arī maza, joprojām ir nozīmīganetveramajā kosmosa plašumā. Izmantojot teātra rekvizītus, sērijā redzamais akrobāts un trubadūrs skolēniem saprotamā veidā ataino iespaidīgus skaitļus.<br/> Aktieris: Ivars Krasts. <br/>Akrobāte: Lizeth Wolk'
+          'Apkārtējā pasaule ir neticami plaša neatkarīgi no tā, vai to skatās caur mikroskopu vai teleskopu. Skaitīsim smilšugraudus, lai iztēlotos neticamus skaitļus, kas palīdzēs labāk izprast kosmosu un tā attālumus, zvaigznes un galaktikas, ko nosaka gravitācijas un rotācijas spēki. Sērija “Zeme” palīdz veidot skolēnu izpratni par to, kā mūsu eksistence uz Zemes, lai arī maza, joprojām ir nozīmīganetveramajā kosmosa plašumā. Izmantojot teātra rekvizītus, sērijā redzamais akrobāts un trubadūrs skolēniem saprotamā veidā ataino iespaidīgus skaitļus.<br/><br/> <b>Aktieris</b>: Ivars Krasts. <br/><b>Akrobāte</b>: Lizeth Wolk'
       },
       {
         title: 'Enerģija',
@@ -204,21 +204,21 @@ export const LANG_VAR_LAT = {
           'Eksperimentiem pilns veltījums inženierijai: enerģijai, tvaikam un spiedienam.',
         image: 'energy.png',
         description:
-          'Pārvaldot tādas dabas parādības kā tvaiks un spiediens, cilvēki ir atklājuši enerģijas avotus, kam bijusi noteicošā loma civilizācijas veidošanā. Vērojot šo sēriju, skolēni gūs dziļāku skatījumu uz eksperimentiem, kuros iesaistīti senie tvaika un iekšdedzes dzinēji. Sērijā “Enerģija”, kur vadītāja lomā iejūtas izcilais latviešu aktieris Andris Keišs, godinām inženieriju un inženierus. Skolēni iepazīs dažādus dzinējus un vēros laboratorijas eksperimentus, kas saistīti ar spiedienu un sprādzieniem, – un tas viss, spēlējot trompeti! <br/> Aktieris: Andris Keišs<br/>Aktirise/akrobāte: Lizeth Wolk<br/>Pianists: Uģis Krišjānis'
+          'Pārvaldot tādas dabas parādības kā tvaiks un spiediens, cilvēki ir atklājuši enerģijas avotus, kam bijusi noteicošā loma civilizācijas veidošanā. Vērojot šo sēriju, skolēni gūs dziļāku skatījumu uz eksperimentiem, kuros iesaistīti senie tvaika un iekšdedzes dzinēji. Sērijā “Enerģija”, kur vadītāja lomā iejūtas izcilais latviešu aktieris Andris Keišs, godinām inženieriju un inženierus. Skolēni iepazīs dažādus dzinējus un vēros laboratorijas eksperimentus, kas saistīti ar spiedienu un sprādzieniem, – un tas viss, spēlējot trompeti! <br/><br/> <b>Aktieris</b>: Andris Keišs<br/><b>Aktirise/akrobāte</b>: Lizeth Wolk<br/><b>Pianists</b>: Uģis Krišjānis'
       },
       {
         title: 'Cilvēki',
         subheading: 'Trīs stāsti par mūsu hipotētiskajiem vecvecākiem.',
         image: 'ancestor.png',
         description:
-          'Šajā sērijā apskatīsim cilvēka evolūciju no paleoantropologu un paleomākslinieku perspektīvas. Sērijā "Cilvēki" ietverti trīs secīgi sižeti, ko kopā savij meditatīva stāstītāja balss un akrobātiskas kustības. Skolēni gūs ieskatu cilvēka apziņas evolūcijā, izdzīvošanas prasmēs, savstarpējās attiecībās un agrīnajā mākslā, kā arī rosinās sajust personisku saikni ar mūsu kopīgajiem senčiem.<br/> Teicējs: Kaspars Znotiņš<br/>Akrobāte: Lizeth Wolk'
+          'Šajā sērijā apskatīsim cilvēka evolūciju no paleoantropologu un paleomākslinieku perspektīvas. Sērijā "Cilvēki" ietverti trīs secīgi sižeti, ko kopā savij meditatīva stāstītāja balss un akrobātiskas kustības. Skolēni gūs ieskatu cilvēka apziņas evolūcijā, izdzīvošanas prasmēs, savstarpējās attiecībās un agrīnajā mākslā, kā arī rosinās sajust personisku saikni ar mūsu kopīgajiem senčiem.<br/><br/><b>Teicējs</b>: Kaspars Znotiņš<br/><b>Akrobāte</b>: Lizeth Wolk'
       },
       {
         title: 'Dzīvība',
         subheading: 'Mikrobu pētnieks demonstrē savu mikroorganismu kolekciju.',
         image: 'life.png',
         description:
-          'Šajā sērijā ielūkosimies mazāko organismu valstībā, ko papildinās virtuālās realitātes sniegtās iespējas. Skolēni varēs vērot pētnieka mikroskopisko organismu kolekciju, kas tiks atspoguļota evolūcijas laika skalā. Sērijā “Dzīvība” mikroorganismus būs iespēja aplūkot pārsteidzoši tuvu, turklāt šo pieredzi neaizmirstamu padarīs vodeviliskā teātra vide, klavieru pavadījums un akrobātika.<br/>Aktieris: Edgars Samītis<br/>Akrobāte: Lizeth Wolk<br/>Pianists: Uģis Krišjānis'
+          'Šajā sērijā ielūkosimies mazāko organismu valstībā, ko papildinās virtuālās realitātes sniegtās iespējas. Skolēni varēs vērot pētnieka mikroskopisko organismu kolekciju, kas tiks atspoguļota evolūcijas laika skalā. Sērijā “Dzīvība” mikroorganismus būs iespēja aplūkot pārsteidzoši tuvu, turklāt šo pieredzi neaizmirstamu padarīs vodeviliskā teātra vide, klavieru pavadījums un akrobātika.<br/><br/><b>Aktieris</b>: Edgars Samītis<br/><b>Akrobāte</b>: Lizeth Wolk<br/><b>Pianists</b>: Uģis Krišjānis'
       }
     ]
   },
