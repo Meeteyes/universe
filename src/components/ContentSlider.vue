@@ -1,61 +1,25 @@
 <script setup lang="ts">
 import arrowImage from '/img/icons/arrow.svg'
-import { computed } from 'vue';
 
-const energyImage = computed(() => {
-  let img = new Image();
-  return img.src = '/img/energy.png';
-});
-
-const lifeImage = computed(() => {
-  let img = new Image();
-  return img.src = '/img/life.png';
-})
-
-const earthImage = computed(() => {
-  let img = new Image();
-  return img.src = '/img/earth.png';
-})
-
-const humansImage = computed(() => {
-  let img = new Image();
-  return img.src = '/img/ancestor.png';
-})
-
-const carrouselImage = computed(() => {
-  switch (props.image) {
-    case 'energy.png':
-      return energyImage.value;
-    case 'life.png':
-      return lifeImage.value;
-    case 'earth.png':
-      return earthImage.value;
-    case 'ancestor.png':
-      return humansImage.value;
-    default:
-      return energyImage.value;
-  }
-})
-
-
-const props = defineProps<{
+defineProps<{
   title?: string
   subheading?: string
   description?: string
   noBackground?: boolean
   image?: string
   hideNav: boolean
+  imageName: string
 }>()
 </script>
 <template>
   <div class="content-slider" :class="`content-slider${noBackground ? '--no-background' : ''}`">
     <div class="content-slider__carousel">
       <div class="content-slider__carousel-content">
-        <img v-if="!$slots.default" :src="carrouselImage" class="content-slider__carousel-slot" :class="{
-          energy: image === 'energy.png',
-          life: image === 'life.png',
-          earth: image === 'earth.png',
-          humans: image === 'ancestor.png'
+        <img v-if="!$slots.default" :src="image" class="content-slider__carousel-slot" :class="{
+          energy: imageName === 'energy.png',
+          life: imageName === 'life.png',
+          earth: imageName === 'earth.png',
+          humans: imageName === 'ancestor.png'
         }" />
         <div v-if="!$slots.default" class="content-slider__text">
           <h2 v-if="title" class="content-slider__episode-title">{{ title }}</h2>
