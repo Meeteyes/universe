@@ -9,9 +9,7 @@ defineProps<{
 
 <template>
   <nav class="desktop-menu__wrapper">
-    <a v-for="item in menu" :href="`#${item}`" :key="item"
-      ><span> {{ item }}</span></a
-    >
+    <a v-for="item in menu" :href="`#${item}`" :key="item"><span class="desktop-menu__link">{{ item }}</span></a>
     <a :href="`#${menu[4]}`">
       <ActionButton :text="actionText" :outlined="true" />
     </a>
@@ -28,5 +26,12 @@ defineProps<{
     justify-content: flex-end;
     align-items: center;
   }
+
+  &__link {
+    &:hover {
+      color: var(--orange)
+    }
+  }
+
 }
 </style>

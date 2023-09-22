@@ -13,12 +13,8 @@ const textSize = computed(() =>
 )
 </script>
 <template>
-  <button
-    :type="isSubmit ? 'submit' : 'button'"
-    class="action-button"
-    :class="{ 'action-button--outlined': outlined, 'action-button--disabled': isDisabled }"
-    :disabled="isDisabled"
-  >
+  <button :type="isSubmit ? 'submit' : 'button'" class="action-button"
+    :class="{ 'action-button--outlined': outlined, 'action-button--disabled': isDisabled }" :disabled="isDisabled">
     {{ text.toUpperCase() }}
   </button>
 </template>
@@ -40,6 +36,11 @@ const textSize = computed(() =>
   color: var(--gray-text);
   border: 1px solid #000;
   padding: 1.5rem 3.5rem;
+
+  &:hover {
+    background-color: #000;
+    color: white;
+  }
 }
 
 .action-button--disabled {
