@@ -292,10 +292,10 @@ export const LANG_VAR_LAT = {
     title: 'Vai Tevi interesē VR izrāde? ',
     description: 'Sazinies ar mums, lai uzzinātu vairāk.',
     placholders: [
-      { text: 'Vārds', id: 'MERGE1', value: 'name' },
+      { text: 'Vārds *', id: 'MERGE1', value: 'name' },
       { text: 'Iestādes nosaukums', id: 'MERGE2', value: 'organisation' },
-      { text: 'Telefona numurs', id: 'MERGE4', value: 'phone' },
-      { text: 'E-pasta adrese', id: 'MERGE0', value: 'email' }
+      { text: 'Telefona numurs *', id: 'MERGE4', value: 'phone' },
+      { text: 'E-pasta adrese *', id: 'MERGE0', value: 'email' }
     ],
     actionCall: 'NOSŪTĪT'
   }

@@ -29,6 +29,10 @@ const textSize = computed(() =>
   height: 2.7rem;
   font-size: v-bind(textSize);
   padding: 2rem 3.5rem;
+
+  &:hover:enabled {
+    cursor: pointer;
+  }
 }
 
 .action-button--outlined {

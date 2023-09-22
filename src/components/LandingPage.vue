@@ -12,7 +12,7 @@ import IconCard from './IconCard.vue'
 import { useWindowSize, useElementSize } from '@vueuse/core'
 import ActionButton from './ActionButton.vue'
 import { useVuelidate } from '@vuelidate/core'
-import { required, email } from '@vuelidate/validators'
+import { required, email, minLength, maxLength, alphaNum } from '@vuelidate/validators'
 import avatarImage from '/img/avatar.png'
 import energyImage from '../assets/img/energy.png';
 import lifeImage from '../assets/img/life.png';
@@ -73,9 +73,9 @@ const formData = reactive({
 })
 
 const rules = {
-  name: { required },
+  name: { required, minLength: minLength(3) },
   organisation: {},
-  phone: { required },
+  phone: { required, minLength: minLength(8), maxLength: maxLength(8), alphaNum },
   email: { required, email }
 }
 
@@ -193,16 +193,17 @@ const carrouselImage = computed(() => {
           <input type="hidden" name="u" value="441949f044e9ca56f5c666d2b" />
           <input type="hidden" name="id" value="d468e1bb57" />
           <input type="text" :placeholder="formPlaceholders[0].text" class="landing-page__form-input"
-            :name="formPlaceholders[0].id" :id="formPlaceholders[0].id" v-model="formData.name" @input="v$.name.$touch" />
+            :class="{ 'landing-page__form-input--error': v$.name.$error }" :name="formPlaceholders[0].id"
+            :id="formPlaceholders[0].id" v-model="formData.name" @input="v$.name.$touch" />
           <input type="text" :placeholder="formPlaceholders[1].text" class="landing-page__form-input"
             :name="formPlaceholders[1].id" :id="formPlaceholders[1].id" v-model="formData.organisation"
             @input="v$.organisation.$touch" />
           <input type="text" :placeholder="formPlaceholders[2].text" class="landing-page__form-input"
             :name="formPlaceholders[2].id" :id="formPlaceholders[2].id" v-model="formData.phone"
-            @input="v$.phone.$touch" />
+            :class="{ 'landing-page__form-input--error': v$.phone.$error }" @input="v$.phone.$touch" />
           <input type="text" :placeholder="formPlaceholders[3].text" class="landing-page__form-input"
             :name="formPlaceholders[3].id" :id="formPlaceholders[3].id" v-model="formData.email"
-            @input="v$.email.$touch" />
+            :class="{ 'landing-page__form-input--error': v$.email.$error }" @input="v$.email.$touch" />
           <ActionButton :text="displayData.form.actionCall" is-submit :is-disabled="isSubmitDisabled" />
         </form>
       </ContentBanner>
@@ -361,6 +362,11 @@ const carrouselImage = computed(() => {
       height: 50px;
       border-radius: 5px;
       padding-left: 15px;
+
+      &--error {
+        border: solid red 2px;
+        color: red;
+      }
     }
   }
 
