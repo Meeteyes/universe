@@ -51,7 +51,7 @@ export const LANG_VAR_ENG = {
       {
         title: 'Life',
         subheading: 'The Microbe Tamer showcases his collection of microorganisms',
-        image: 'ancestor.png',
+        image: 'life.png',
         description:
           'In "Life", students peer through a looking glass into the realm of the smallest organisms, enhanced by the possibilities of virtual reality. The audience delves into the Tamers collection of microscopic organisms as the narrator places them on the Evolutionary Timeline of Life. Students gain an incredibly close and intimate look at these microorganisms, within an immersive experience heightened by the vaudevillian theatrical setting, accompanied by piano and acrobatics. <br/>Actor/Narrator: Edgars Samītis <br/>Acrobat: Lizeth Wolk Pianist: Uģis Krišjānis'
       },
@@ -59,14 +59,14 @@ export const LANG_VAR_ENG = {
         title: 'Earth',
         subheading:
           'A traveling singer shares the tale of significant numbers and vast distances in space.',
-        image: 'ancestor.png',
+        image: 'earth.png',
         description:
           'The world around us is just as expansive, whether seen through a microscope or a telescope. We count the grains of sand to imagine unimaginable numbers that aid our understanding of space: its distances, stars, and galaxies, governed by gravity and rotational forces. The episode helps students grasp the concept of how our existence on Earth, though small, remains great within the known expanse of space. An acrobat and a troubadour utilize theatrical props to make the concept of large numbers tangible to students. <br/>Actor/Narrator: Ivars Krasts <br/>Acrobat: Lizeth Wolk'
       },
       {
         title: 'Energy',
         subheading: 'An experiment-filled tribute to engineering: energy, steam, and pressure.',
-        image: 'ancestor.png',
+        image: 'energy.png',
         description:
           'Through the mastery of natural phenomena like steam and pressure, humans have uncovered energy sources that played a pivotal role in shaping civilization. Students will gain an up-close perspective on experiments involving vintage steam and internal combustion engines. A genuinely theatrical performance within the episode that celebrates engineering and engineers is led by Andris Keišs, highlighting various engines at work in a virtual reality environment. <br/>Actor/Narrator: Andris Keišs <br/>Actor/Acrobat: Lizeth Wolk <br/>Pianist: Uģis Krišjānis'
       }
@@ -154,7 +154,7 @@ export const LANG_VAR_ENG = {
 
 export const LANG_VAR_LAT = {
   menu: ['Sākums', 'Par mums', 'Epizodes', 'BUJ', 'Saziņa'],
-  title: "Virtuālās realitātes izrāde skolēniem",
+  title: 'Virtuālās realitātes izrāde skolēniem',
   actionButton: 'UZZINĀT VAIRĀK',
   actionButtonOrder: 'SAŅEM PIEDĀVĀJUMU',
   summaryTitle: 'Vai esi gatavs izbaudīt nākotnes izglītību? Piedzīvo to savā klasē!',
@@ -194,7 +194,7 @@ export const LANG_VAR_LAT = {
         title: 'Zeme',
         subheading:
           'Ceļojoša ielu mākslinieka stāsts par neiedomājamiem skaitļiem un attālumiem kosmosā.',
-        image: 'ancestor.png',
+        image: 'earth.png',
         description:
           'Apkārtējā pasaule ir neticami plaša neatkarīgi no tā, vai to skatās caur mikroskopu vai teleskopu. Skaitīsim smilšugraudus, lai iztēlotos neticamus skaitļus, kas palīdzēs labāk izprast kosmosu un tā attālumus, zvaigznes un galaktikas, ko nosaka gravitācijas un rotācijas spēki. Sērija “Zeme” palīdz veidot skolēnu izpratni par to, kā mūsu eksistence uz Zemes, lai arī maza, joprojām ir nozīmīganetveramajā kosmosa plašumā. Izmantojot teātra rekvizītus, sērijā redzamais akrobāts un trubadūrs skolēniem saprotamā veidā ataino iespaidīgus skaitļus.<br/> Aktieris: Ivars Krasts. <br/>Akrobāte: Lizeth Wolk'
       },
@@ -202,7 +202,7 @@ export const LANG_VAR_LAT = {
         title: 'Enerģija',
         subheading:
           'Eksperimentiem pilns veltījums inženierijai: enerģijai, tvaikam un spiedienam.',
-        image: 'ancestor.png',
+        image: 'energy.png',
         description:
           'Pārvaldot tādas dabas parādības kā tvaiks un spiediens, cilvēki ir atklājuši enerģijas avotus, kam bijusi noteicošā loma civilizācijas veidošanā. Vērojot šo sēriju, skolēni gūs dziļāku skatījumu uz eksperimentiem, kuros iesaistīti senie tvaika un iekšdedzes dzinēji. Sērijā “Enerģija”, kur vadītāja lomā iejūtas izcilais latviešu aktieris Andris Keišs, godinām inženieriju un inženierus. Skolēni iepazīs dažādus dzinējus un vēros laboratorijas eksperimentus, kas saistīti ar spiedienu un sprādzieniem, – un tas viss, spēlējot trompeti! <br/> Aktieris: Andris Keišs<br/>Aktirise/akrobāte: Lizeth Wolk<br/>Pianists: Uģis Krišjānis'
       },
@@ -216,7 +216,7 @@ export const LANG_VAR_LAT = {
       {
         title: 'Dzīvība',
         subheading: 'Mikrobu pētnieks demonstrē savu mikroorganismu kolekciju.',
-        image: 'ancestor.png',
+        image: 'life.png',
         description:
           'Šajā sērijā ielūkosimies mazāko organismu valstībā, ko papildinās virtuālās realitātes sniegtās iespējas. Skolēni varēs vērot pētnieka mikroskopisko organismu kolekciju, kas tiks atspoguļota evolūcijas laika skalā. Sērijā “Dzīvība” mikroorganismus būs iespēja aplūkot pārsteidzoši tuvu, turklāt šo pieredzi neaizmirstamu padarīs vodeviliskā teātra vide, klavieru pavadījums un akrobātika.<br/>Aktieris: Edgars Samītis<br/>Akrobāte: Lizeth Wolk<br/>Pianists: Uģis Krišjānis'
       }

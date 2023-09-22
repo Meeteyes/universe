@@ -122,7 +122,7 @@ defineProps({
     padding: 0 0;
 
     &__text {
-      max-width: 50%;
+      text-align: left;
     }
   }
 }

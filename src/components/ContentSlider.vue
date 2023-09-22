@@ -1,7 +1,44 @@
 <script setup lang="ts">
 import arrowImage from '/img/icons/arrow.svg'
+import { computed } from 'vue';
 
-defineProps<{
+const energyImage = computed(() => {
+  let img = new Image();
+  return img.src = '/img/energy.png';
+});
+
+const lifeImage = computed(() => {
+  let img = new Image();
+  return img.src = '/img/life.png';
+})
+
+const earthImage = computed(() => {
+  let img = new Image();
+  return img.src = '/img/earth.png';
+})
+
+const humansImage = computed(() => {
+  let img = new Image();
+  return img.src = '/img/ancestor.png';
+})
+
+const carrouselImage = computed(() => {
+  switch (props.image) {
+    case 'energy.png':
+      return energyImage.value;
+    case 'life.png':
+      return lifeImage.value;
+    case 'earth.png':
+      return earthImage.value;
+    case 'ancestor.png':
+      return humansImage.value;
+    default:
+      return energyImage.value;
+  }
+})
+
+
+const props = defineProps<{
   title?: string
   subheading?: string
   description?: string
@@ -14,7 +51,12 @@ defineProps<{
   <div class="content-slider" :class="`content-slider${noBackground ? '--no-background' : ''}`">
     <div class="content-slider__carousel">
       <div class="content-slider__carousel-content">
-        <img v-if="!$slots.default" :src="`/img/${image}`" class="content-slider__carousel-slot" />
+        <img v-if="!$slots.default" :src="carrouselImage" class="content-slider__carousel-slot" :class="{
+          energy: image === 'energy.png',
+          life: image === 'life.png',
+          earth: image === 'earth.png',
+          humans: image === 'ancestor.png'
+        }" />
         <div v-if="!$slots.default" class="content-slider__text">
           <h2 v-if="title" class="content-slider__episode-title">{{ title }}</h2>
           <h3 class="content-slider__subheading">{{ subheading }}</h3>
@@ -23,18 +65,12 @@ defineProps<{
         <slot></slot>
       </div>
       <div v-if="!hideNav" class="content-slider__carousel-nav">
-        <div
-          role="button"
-          class="content-slider__carousel-button content-slider__carousel-button--left"
-          @click="$emit('changeSlide', -1)"
-        >
+        <div role="button" class="content-slider__carousel-button content-slider__carousel-button--left"
+          @click="$emit('changeSlide', -1)">
           <img :src="arrowImage" />
         </div>
-        <div
-          role="button"
-          class="content-slider__carousel-button content-slider__carousel-button--right"
-          @click="$emit('changeSlide', 1)"
-        >
+        <div role="button" class="content-slider__carousel-button content-slider__carousel-button--right"
+          @click="$emit('changeSlide', 1)">
           <img class="content-slider__right-arrow" :src="arrowImage" />
         </div>
       </div>
@@ -110,5 +146,25 @@ defineProps<{
   &__description {
     font-size: 0.8rem;
   }
+}
+
+.life,
+.earth {
+  height: 140%;
+  position: relative;
+  top: -75px;
+}
+
+.energy {
+  height: 160%;
+  position: relative;
+  top: -130px;
+  transform: rotate(10deg);
+}
+
+.humans {
+  height: 130%;
+  position: relative;
+  top: -75px;
 }
 </style>
